@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <title>Conversor de Unidades</title>
+    </head>
+    <body>
+        <div class="container-fluid mt-5">
+            <div class="row">
+                <!-- Barra de navegación lateral -->
+                <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column">
+                            <li class="nav-item" id="inicio">
+                                <a class="nav-link" href="../Proyecto/Inicio.html">Inicio</a>
+                            </li>
+                            <li class="nav-item" id="conversor">
+                                <a class="nav-link" href="../Proyecto/Conversor.html">Conversor de unidades</a>
+                            </li>
+                            <li class="nav-item" id="calculadora">
+                                <a class="nav-link" href="../Proyecto/Calculadora.html">Calculadora</a>
+                            </li>
+                            <li class="nav-item" id="graficadora">
+                                <a class="nav-link" href="../Proyecto/Graficadora.html">Graficadora</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+    
+                <!-- Contenido principal -->
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                    <div class="container">
+                        <h1 class="text-center">Conversor de Unidades</h1>
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link" id="temperatura-tab" data-toggle="tab" href="#temperatura">Temperatura</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="masa-tab" data-toggle="tab" href="#masa">Masa</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="longitud-tab" data-toggle="tab" href="#longitud">Longitud</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="velocidad-tab" data-toggle="tab" href="#velocidad">Velocidad</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content mt-3">
+                        <div id="temperatura" class="tab-pane">
+                            <label for="inputUnidad">Unidad de entrada:</label>
+                            <select id="inputUnidad" class="form-control" onchange="convertirTemperatura()">
+                                <option value="celsius">Celsius</option>
+                                <option value="fahrenheit">Fahrenheit</option>
+                                <option value="kelvin">Kelvin</option>
+                            </select>
+                        
+                            <label for="outputUnidad">Unidad de salida:</label>
+                            <select id="outputUnidad" class="form-control" onchange="convertirTemperatura()">
+                                <option value="celsius">Celsius</option>
+                                <option value="fahrenheit">Fahrenheit</option>
+                                <option value="kelvin">Kelvin</option>
+                            </select>
+                            
+                            <label for="inputValor">Valor:</label>
+                            <input type="number" id="inputValor" class="form-control" placeholder="Ingrese el valor" oninput="convertirTemperatura()">
+                        
+                            <label for="outputValor">Resultado:</label>
+                            <input type="text" id="outputValor" class="form-control" placeholder="Resultado" disabled>
+                        </div>
+
+                        <div id="masa" class="tab-pane">
+                            <label for="inputUnidadMasa">Unidad de entrada:</label>
+                            <select id="inputUnidadMasa" class="form-control" onchange="convertirMasa()">
+                                <option value="kilogramos">Kilogramos</option>
+                                <option value="libras">Libras</option>
+                                <option value="gramos">Gramos</option>
+                                <option value="onzas">Onzas</option>
+                            </select>
+                        
+                            <label for="outputUnidadMasa">Unidad de salida:</label>
+                            <select id="outputUnidadMasa" class="form-control" onchange="convertirMasa()">
+                                <option value="kilogramos">Kilogramos</option>
+                                <option value="libras">Libras</option>
+                                <option value="gramos">Gramos</option>
+                                <option value="onzas">Onzas</option>
+                            </select>
+                            
+                            <label for="inputValorMasa">Valor:</label>
+                            <input type="number" id="inputValorMasa" class="form-control" placeholder="Ingrese el valor" oninput="convertirMasa()">
+                        
+                            <label for="outputValorMasa">Resultado:</label>
+                            <input type="text" id="outputValorMasa" class="form-control" placeholder="Resultado" disabled>
+                        </div>
+                        
+                        <div id="longitud" class="tab-pane">
+                            <label for="inputUnidadLongitud">Unidad de entrada:</label>
+                            <select id="inputUnidadLongitud" class="form-control" onchange="convertirLongitud()">
+                                <option value="metros">Metros</option>
+                                <option value="pies">Pies</option>
+                                <option value="kilometros">Kilómetros</option>
+                                <option value="millas">Millas</option>
+                            </select>
+                        
+                            <label for="outputUnidadLongitud">Unidad de salida:</label>
+                            <select id="outputUnidadLongitud" class="form-control" onchange="convertirLongitud()">
+                                <option value="metros">Metros</option>
+                                <option value="pies">Pies</option>
+                                <option value="kilometros">Kilómetros</option>
+                                <option value="millas">Millas</option>
+                            </select>
+                            
+                            <label for="inputValorLongitud">Valor:</label>
+                            <input type="number" id="inputValorLongitud" class="form-control" placeholder="Ingrese el valor" oninput="convertirLongitud()">
+                        
+                            <label for="outputValorLongitud">Resultado:</label>
+                            <input type="text" id="outputValorLongitud" class="form-control" placeholder="Resultado" disabled>
+                        </div>
+                        
+                        <div id="velocidad" class="tab-pane">
+                            <label for="inputUnidadVelocidad">Unidad de entrada:</label>
+                            <select id="inputUnidadVelocidad" class="form-control" onchange="convertirVelocidad()">
+                                <option value="metrosPorSegundo">Metros por segundo</option>
+                                <option value="kilometrosPorHora">Kilómetros por hora</option>
+                                <option value="millasPorHora">Millas por hora</option>
+                                <option value="centimetrosPorSegundo">Centimetros por segundo</option>
+                            </select>
+                        
+                            <label for="outputUnidadVelocidad">Unidad de salida:</label>
+                            <select id="outputUnidadVelocidad" class="form-control" onchange="convertirVelocidad()">
+                                <option value="metrosPorSegundo">Metros por segundo</option>
+                                <option value="kilometrosPorHora">Kilómetros por hora</option>
+                                <option value="millasPorHora">Millas por hora</option>
+                                <option value="centimetrosPorSegundo">Centimetros por segundo</option>
+                            </select>
+                            
+                            <label for="inputValorVelocidad">Valor:</label>
+                            <input type="number" id="inputValorVelocidad" class="form-control" placeholder="Ingrese el valor" oninput="convertirVelocidad()">
+                        
+                            <label for="outputValorVelocidad">Resultado:</label>
+                            <input type="text" id="outputValorVelocidad" class="form-control" placeholder="Resultado" disabled>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="../Proyecto/ScriptConv.js"></script>
+        <script src="../Proyecto/ScriptGeneral.js"></script>
+    </body>
+</html>

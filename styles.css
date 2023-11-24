@@ -1,0 +1,79 @@
+body {
+  font-family: 'Work Sans', sans-serif;
+  background-color: #f8f9fa;
+}
+
+h1 {
+  color: #007bff;
+}
+
+.row {
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  
+}
+
+.form-control {
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  color: #fff;
+  border: -20px;
+  background-color: #007bff;
+  border-color: #ffffff;
+}
+.btn-secondary {
+  color: #fff;
+  border: -20px;
+  background-color: #6c757d;
+  border-color: #ffffff;
+}
+
+.btn-success {
+  color: #fff;
+  border: -20px;
+  background-color: #28a745;
+  border-color: #ffffff;
+}
+
+.btn-warning {
+  color: #212529;
+  border: -20px;
+  background-color: #ffc107;
+  border-color: #ffc107;
+  border-color: #ffffff;
+}
+
+.btn-danger {
+  color: #fff;
+  border: -20px;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  border-color: #ffffff;
+}
+
+button:hover {
+  background-color: #45a049;
+  display: inline;
+}
+
+.nav-tabs {
+  margin-top: 20px;
+}
+
+.nav-link {
+  color: #495057;
+}
+
+/*Color cuando se pasa en mouse por el nav*/
+.nav-link:hover {
+  background-color: lightblue;
+}
+
+/*Color de la pestania activa*/
+.nav-item.active .nav-link {
+  background-color: #007bff !important;
+  color: #ffffff !important;
+}
